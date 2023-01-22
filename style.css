@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500&display=swap');
+
+
+:root{
+      
+     font-size:62.5%;
+
+    --primary-color:rgba(0, 0, 0, 0.945);
+    --primary-light:rgba(0, 0, 0, 0.800);
+    --secondary-color:white;
+    --primary-font-color:white;
+    --secondary-font-color:tomato;
+
+    --border-color:rgba(0, 0, 0, 0.300);
+}
+
+/* DEFAULT BROWSER STYLING RESTYLE */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family: 'Roboto Slab', serif;
+    font-size:1.2rem;
+
+}
+body{
+    width:100%;
+    height:100vh;
+    
+
+}
+    
+
+li{
+    list-style-type:none;
+}
+a{
+    text-decoration:none;
+    color:var(--primary-font-color);
+    /* color:black; */
+}
+
+img{
+    width:100%;
+    height:100%;
+}
+
+span{
+    color:tomato;
+}
+
+h1{
+    font-size:2.5rem;
+}
+h3{
+    font-size:1.6rem;
+    font-weight:400;
+    letter-spacing:1px;
+}
+
+/* REUSING STYLES */
+
+.flex{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.text_align{
+    text-align:center;
+}
+.ul_list li{
+    padding:10px;
+    text-align:left;
+}
+
+.border_radius{
+    border-radius:4px;
+}
+
+.header{
+    height:50px;
+    background-color:var(--primary-color);
+    padding:0 5%;
+    
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.header .logo{
+    display:flex;
+    color:white;
+}
+
+.header .logo .fa-utensils{
+    font-size:1.4rem;
+    padding:0 8px;
+    color:tomato;
+}
+
+.header .header_nav ul{
+    gap:20px;
+}
+
+.header .header_nav ul li a{
+    padding:10px 12px;
+    letter-spacing:1px;
+}
+
+.header .header_nav ul li a:hover{
+     padding:9px 11px;
+     color:var(--primary-font-color);
+     border:1px solid var(--secondary-color);
+
+     /* background-color:white;
+     color:black; */
+     
+     border-radius:4px;
+     letter-spacing:1px;
+}
+
+.header .header_nav ul li a .fa-chevron-down{
+    font-size:0.8rem;
+}
+
+
+
+/* NAVIGATION BAR NESTED LIST */
+
+
+
+.header .header_nav ul li:nth-child(2){
+    position: relative;
+}
+
+.header .header_nav ul li:nth-child(2) .nested-list{
+    display:none;
+    border-radius:4px;
+    padding-left:4px;
+    width:90px;
+    background-color:var(--primary-color);
+    position:absolute;
+    top:32px;
+}
+.header .header_nav ul li:nth-child(2) .nested-list::before{
+    content:"";
+    position:absolute;
+    top:-20px;
+    left:30px;
+    border-width:10px;
+    border-color:transparent transparent var(--primary-color) transparent;
+    border-style:solid;
+}
+
+.header .header_nav ul li:nth-child(2) .nested-list li {
+    margin:20px 0;
+}
+.header .header_nav ul li:nth-child(2) .nested-list li a{
+    font-size:1.4rem;
+}
+
+.header .header_nav ul li:nth-child(2):hover .nested-list{
+    display:block;
+}
+
+.nested-list li:nth-child(3){
+    position:relative;
+}
+
+.nested-list li:nth-child(3) .nested-child-list{
+     display:none;
+    border-radius:4px;
+    position:absolute;
+    left:90px;
+    top:-20px;
+    padding-left:4px;
+    width:160px;
+    background-color:var(--primary-color);
+}
+
+.nested-list li:nth-child(3) .nested-child-list::before{
+    content:"";
+    position:absolute;
+    left:-20px;
+    top:20px;
+    border-width:10px;
+    border-color:transparent black transparent transparent;
+    border-style:solid;
+}
+
+.nested-list li:nth-child(3):hover .nested-child-list{
+    display:block;
+}
+
+/* MOBILE NAV BUTTON */
+
+.mobile_nav{
+    display:none;
+    padding:10px 12px;
+}
+
+.mobile_nav:hover{
+    padding:9px 11px;
+    border:1px solid white;
+    border-radius:4px;
+
+}
+
+
+/* BANNER CONTENT */
+.banner{
+    background-image:url(./Images/Food_banner\ image.jpg);
+    background-size:cover;
+    background-blend-mode:darken;
+    background-color:rgba(0, 0, 0, 0.500);
+    width:100%;
+    height:300px;
+    position:relative;
+}
+.banner .banner_opacity{
+    background-color:black;
+}
+.banner .banner_container{
+    position:absolute;
+    top:25%;
+    left:15%;
+}
+
+.banner .banner_container h1{
+    color:var(--primary-font-color);
+    font-weight:lighter;
+    letter-spacing:2px;
+}
+
+.banner .banner_container h1:first-child{
+    font-weight:500;
+    letter-spacing:2px;
+    word-spacing:5px;
+}
+
+.banner .banner_container a{
+    letter-spacing:2px;
+
+    display:inline-block;
+    margin-top:10px;
+    background-color:rgba(255, 255, 255, 0);
+    border:1px solid var(--secondary-color);
+    padding:8px 18px;
+    cursor:pointer;
+
+    transition:1s ease;
+}
+
+.banner .banner_container a:hover{
+    background-color:var(--secondary-color);
+    color:var(--primary-color);
+}
+
+
+/* FAVORITE FOOD */
+
+.section_heading{
+    margin:20px 0;
+    font-size:1.6rem;
+}
+
+section{
+    width:80%;
+    margin:20px auto;
+    border:1px solid var(--border-color);
+}
+
+section .section_container{
+    padding:10px 40px;
+}
+
+section .section_container .section_items{
+    padding:10px 12px;
+    width:31.66%;
+    border:1px solid rgba(0, 0, 0, 0.281);
+    border-bottom:none;
+}
+section .section_container .section_items .section_img_container{
+    margin-bottom:10px;
+}
+
+section .section_container .section_items .section_img_container img{
+    opacity:0.8;
+    transition:1s;
+}
+
+section .section_container .section_items .section_img_container img:hover{
+    opacity:1;
+}
+
+section .section_container .section_items h3 a{
+    background-color:tomato;
+    padding:2px;
+    transition:1s ease;
+}
+
+section .section_container .section_items h3 a:hover{
+    padding:4px;
+}
+
+.footer{
+    background-color:var(--primary-color);
+    padding:70px 0;
+}
+.footer_container{
+    max-width:1170px;
+    margin:auto;
+}
+.row{
+    display:flex;
+    flex-wrap:wrap;
+}
+.footer-col{
+    width:25%;
+    padding:0 15px;
+}
+.footer-col h4{
+    font-size:1.8rem;
+    color:#fff;
+    text-transform:capitalize;
+    margin-bottom:30px;
+    position:relative;
+}
+.footer-col h4::before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    background-color:tomato;
+    height:2px;
+    box-sizing:border-box;
+    width:50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom:10px;
+}
+.footer-col ul li a{
+    font-size:1.6rem;
+    text-transform:capitalize;
+    display:block;
+    transition:all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    padding-left:8px;
+}
+.footer-col .social_links a{
+    display:inline-block;
+    height:40px;
+    width:40px;
+    background-color:tomato;
+    margin:0 10px 10px 0;
+    text-align:center;
+    line-height:40px;
+    border-radius:50%;
+}
+/*RESPONSIVE STYLING*/
+
+@media only screen and (min-width:340px) and (max-width:1050px){
+     
+    .header{
+        position:relative;
+        z-index:999;
+    }
+
+    .header .logo{
+        z-index:999;
+    }
+
+    .header_nav{
+     display:none;
+
+     position:absolute;
+     top:50px;
+     left:0;
+
+     width:100%;
+     height:300px;
+     background-color:var(--primary-color);
+
+     display:flex;
+     justify-content:center;
+     align-items:center;
+
+     transform:translateY(-200%);
+     transition:all 0.5s linear;
+    }
+
+    .active .header_nav{
+        transform:translateY(0%);
+    }
+
+    .header_nav ul{
+        flex-direction:column;
+    }
+ 
+    .mobile_nav{
+     display:block;
+     z-index:999;
+    }  
+ }
+
+ @media (max-width:700px){
+   .section_container{
+    flex-direction:column;
+    padding:10px 20px !important;
+   }
+   .section_container .section_items{
+    width:100% !important;
+   }
+ }
+
+
